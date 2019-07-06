@@ -1,0 +1,7 @@
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\bin\Debug\SuccessAlgorithms.exe.config
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\bin\Debug\SuccessAlgorithms.exe
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\bin\Debug\SuccessAlgorithms.pdb
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\obj\Debug\SuccessAlgorithms.csprojResolveAssemblyReference.cache
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\obj\Debug\SuccessAlgorithms.csproj.CoreCompileInputs.cache
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\obj\Debug\SuccessAlgorithms.exe
+C:\Personal\Cre\Algorithms\SucessAlgorithms\SuccessAlgorithms\obj\Debug\SuccessAlgorithms.pdb
