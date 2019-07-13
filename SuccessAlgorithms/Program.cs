@@ -31,7 +31,7 @@ namespace SuccessAlgorithms
             // obj.IsScramble();
             // obj.Indent();
             // obj.MinWindow();
-            obj.RemoveOuterParentheses();
+            // obj.RemoveOuterParentheses();
 
             Arrays arrObj = new Arrays();
             // arrObj.HasTripletSumZero();
@@ -102,6 +102,8 @@ namespace SuccessAlgorithms
             // arrObj.FirstUniqChar();
             // arrObj.TotalFruit();
             // arrObj.MaxProfit2Transactions();
+            // arrObj.PredictTheWinner();
+            // arrObj.NoOfPersonsAlive();
 
             Recursion recObj = new Recursion();
             //recObj.StrategyGame();
@@ -194,7 +196,7 @@ namespace SuccessAlgorithms
             // treeObj.MaxPathSum();
             // treeObj.PostOrderTraversal();
             // treeObj.MaxAncestorDiff();
-
+            treeObj.DelNodes();
 
             DP dpObj = new DP();
             // dpObj.FindSubArraySum();

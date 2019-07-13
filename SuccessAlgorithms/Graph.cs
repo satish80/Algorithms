@@ -626,7 +626,7 @@ namespace SuccessAlgorithms
         }
     }
 
-    public class Pair : IEquatable<Pair>
+    public class Pair : IEquatable<Pair>, IComparable<Pair>
     {
         public Pair(int x, int y)
         {
@@ -645,6 +645,11 @@ namespace SuccessAlgorithms
             }
 
             return false;
+        }
+
+        public int CompareTo(Pair other)
+        {
+            return other.Y - this.Y;
         }
     }
 

@@ -801,6 +801,53 @@ namespace SuccessAlgorithms
             return ret;
         }
 
+        public void DelNodes()
+        {
+            TreeNode node = new TreeNode(1);
+            node.Left = new TreeNode(2);
+            node.Left.Left = new TreeNode(4);
+            node.Left.Right = new TreeNode(5);
+            node.Right = new TreeNode(3);
+            node.Right.Left = new TreeNode(6);
+            node.Right.Right = new TreeNode(7);
+
+            int[] to_delete = new int[] { 3, 5};
+            HashSet<int> map = new HashSet<int>();
+
+            foreach (int i in to_delete)
+            {
+                map.Add(i);
+            }
+
+            var nodes = DelNodes(node, map, new List<TreeNode>());
+        }
+
+        private IList<TreeNode> DelNodes(TreeNode root, HashSet<int> del, IList<TreeNode> list)
+        {
+
+            if (root == null)
+            {
+                return list;
+            }
+
+            DelNodes(root.Left, del, list);
+            DelNodes(root.Right, del, list);
+
+            if (del.Contains(root.Value.Value))
+            {
+                del.Remove(root.Value.Value);
+                root = null;
+            }
+            else
+            {
+                if (root != null)
+                {
+                    list.Add(root);
+                }
+            }
+
+            return list;
+        }
 
         public void FindLCA()
         {

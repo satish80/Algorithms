@@ -3354,6 +3354,38 @@ namespace SuccessAlgorithms
             return res;
         }
 
+        public void PredictTheWinner()
+        {
+            int[] nums = new int[] { 1, 1, 1 };
+
+            Console.WriteLine(Predict(nums, 0, nums.Length - 1, 0, 0));
+        }
+
+        private bool Predict(int[] arr, int i, int j,  int sum1, int sum2)
+        {
+            if (i >= arr.Length - 1 || j <= 0)
+            {
+                return sum1 > sum2;
+            }
+
+            sum1 += arr[i++];
+            if (Predict(arr, i, j, sum2, sum1))
+            {
+                return true;
+            }
+
+            sum1 -= arr[i];
+            sum2 += arr[j--];
+
+            if (!Predict(arr, i, j, sum2, sum1))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
         //https://leetcode.com/explore/featured/card/google/59/array-and-strings/3053/
         public void CanJump()
         {
@@ -3477,6 +3509,63 @@ namespace SuccessAlgorithms
             }
 
             return arr;
+        }
+
+        public void NoOfPersonsAlive()
+        {
+            Pair p1 = new Pair(1978, 2000);
+            Pair p2 = new Pair(1940, 1999);
+            Pair p3 = new Pair(1920, 1975);
+            Pair p4 = new Pair(1950, 1980);
+            Pair p5 = new Pair(1955, 1965);
+            Pair p6 = new Pair(1951, 1953);
+            Pair p7 = new Pair(1952, 1953);
+
+            List<Pair> pairs = new List<Pair>()
+            {
+                p1, p2, p3, p4, p5, p6, p7
+            };
+
+            Console.WriteLine(NoOfPersonsAlive(pairs));
+        }
+
+        private int NoOfPersonsAlive(List<Pair> pairs)
+        {
+            pairs.Sort();
+            int start = 0; int end = int.MaxValue;
+            int count = 0; int max = 0;
+
+            for(int i=0; i < pairs.Count(); i++)
+            {
+                count = 0;
+
+                for(int j=i; j< pairs.Count(); j++)
+                {
+                    if (pairs[j].Y >= start)
+                    {
+                        count++;
+                        max = Math.Max(max, count);
+                    }
+                    else
+                    {
+                        start = 0;
+                        end = int.MaxValue;
+                        break;
+                    }
+
+                    if (pairs[j].X >= start)
+                    {
+                        start = pairs[j].X;
+                    }
+
+                    if (pairs[j].Y <= end)
+                    {
+                        end = pairs[j].Y;
+                    }
+                }
+            }
+
+            return max;
         }
 
         public void MaxProfit2Transactions()
