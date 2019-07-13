@@ -196,7 +196,9 @@ namespace SuccessAlgorithms
             // treeObj.MaxPathSum();
             // treeObj.PostOrderTraversal();
             // treeObj.MaxAncestorDiff();
-            treeObj.DelNodes();
+            // treeObj.DelNodes();
+            treeObj.FindSuccessorInBST();
+
 
             DP dpObj = new DP();
             // dpObj.FindSubArraySum();

@@ -801,6 +801,78 @@ namespace SuccessAlgorithms
             return ret;
         }
 
+        public void FindSuccessorInBST()
+        {
+            TreeNode node = new TreeNode(10);
+            node.Left = new TreeNode(5);
+            node.Right = new TreeNode(17);
+            node.Left.Left = new TreeNode(3);
+            node.Left.Right = new TreeNode(7);
+            node.Right.Left = new TreeNode(15);
+            node.Right.Right = new TreeNode(19);
+            node.Left.Right.Left = new TreeNode(6);
+
+            bool found = false;
+            var res = FindSuccessorInBST(node, 7, ref found);
+        }
+
+        private TreeNode FindSuccessorInBST(TreeNode node, int k, ref bool found)
+        {
+            TreeNode res = null;
+
+            if(node == null )
+            {
+                return null;
+            }
+
+            
+            if (node.Value == k)
+            {
+                res = node;
+
+                if (node.Right != null)
+                {
+                    node = node.Right;
+
+                    while (node.Left != null)
+                    {
+                        node = node.Left;
+                    }
+                    res = node;
+                }
+                else
+                {
+                    found = true;
+                    return res;
+                }
+
+                return res;
+            }
+
+            else if (node.Value > k )
+            {
+                res = FindSuccessorInBST(node.Left, k, ref found);
+                if (found == true && node.Value > k)
+                {
+                    res = node;
+                    return res;
+                }
+
+            }
+            else
+            {
+                res = FindSuccessorInBST(node.Right, k, ref found);
+                if (found == true && node.Value > k)
+                {
+                    res = node;
+                    return res;
+                }
+            }
+
+            return res;
+        }
+
+        //https://leetcode.com/problems/delete-nodes-and-return-forest/
         public void DelNodes()
         {
             TreeNode node = new TreeNode(1);
